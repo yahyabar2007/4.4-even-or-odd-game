@@ -4,29 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Even or Odd Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="game">
-        <h1 id="display">Even or odd game!</h1>
-        <div class="container1">
-            <p class="attempts">Attempts</p>
-            <p id="attempts">0</p>
+        <!-- Game Status Display -->
+        <h1 id="display">Even or Odd Game</h1>
+
+        <!-- Counters -->
+        <div class="container">
+            <p>Attempt: <br> <span id="attempt">0</span></p>
+            <hr noshade="">
+            <p>Score: <br> <span id="score">0</span></p>
+            <hr noshade="">
+            <p>Current Streak: <br> <span id="current">0</span></p>
+            <hr noshade="">
+            <p>Highest Streak: <br> <span id="highest">0</span></p>
+            <hr noshade="">
+            <p>Wrong Answers: <br> <span id="wrongCount">0</span></p>
         </div>
-        <div class="container2">
-            <p class="Score">Score</p>
-            <p id="Score">0</p>
+
+        <!-- Timer -->
+        <div class="timer">
+            <h3>Time left: <span id="time">10</span> seconds</h3>
         </div>
-        <h2>I think of a number do you think it is odd or even?</h2>
-        <div class="userControl">
-            <button onclick="guess('even')" class="F1">Even</button> <br>
-            <button onclick="guess('odd')" class="F2">Odd</button>
+
+        <!-- Question -->
+        <h2>I think of a number. Is it even or odd?</h2>
+
+        <!-- User Input Buttons -->
+        <div class="userInput">
+            <button onclick="guess('even')" id="EV">Even</button>
+            <button onclick="guess('odd')" id="OD">Odd</button>
         </div>
+
+
+        <!-- Play Again Button (hidden initially) -->
+        <button id="playAgainBtn" onclick="restartGame()" style="display:none; text-align: center;">Play Again</button>
+
+
+        <!-- Sound Effects -->
+        <audio src="./correct.mp3" id="correct"></audio>
+        <audio src="./wrong.mp3" id="wrongSound"></audio>
     </div>
-    <audio src="./correct.mp3" id="correct"></audio>
-    <audio src="./wrong.mp3" id="wrong"></audio>
+
+    <!-- Link to external JS -->
     <script src="main.js"></script>
 </body>
 
