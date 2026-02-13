@@ -1,5 +1,7 @@
 let attempets = 0;
 let score = 0;
+let currentStreak = 0;
+let highestStreak = 0;
 function guess(userGuess) {
     attempets++;
     document.getElementById("attempts").innerHTML = attempets;
